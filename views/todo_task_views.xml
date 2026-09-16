@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tehtävien listaus -->
+    <record id="view_todo_task_list" model="ir.ui.view">
+        <field name="name">todo.task.list</field>
+        <field name="model">todo.task</field>
+        <field name="arch" type="xml">
+            <list string="Tehtävät">
+                <field name="name"/>
+                <field name="user_id"/>
+                <field name="aloitus_aika"/>
+                <field name="lopetus_aika"/>
+                <field name="kesto_tunneissa" widget="float_time"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Tehtävän lomakenäkymä -->
+    <record id="view_todo_task_form" model="ir.ui.view">
+        <field name="name">todo.task.form</field>
+        <field name="model">todo.task</field>
+        <field name="arch" type="xml">
+            <form string="Tehtävä">
+                <header>
+                    <!-- Ajastimen napit-->
+                    <button name="aloita_ajastin" string="Aloita Ajastin" type="object" class="oe_highlight" invisible="ajastin_kaynnissa"/>
+                    <button name="lopeta_ajastin" string="Lopeta Ajastin" type="object" class="oe_highlight" invisible="not ajastin_kaynnissa"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="user_id"/>
+                            <!-- Tällä kentällä määritetään kumpi ajastin-nappi näytetään -->
+                            <field name="ajastin_kaynnissa" invisible="1"/>
+                        </group>
+                        <group>
+                            <!-- Aikaan liittyvät tiedot -->
+                            <field name="aloitus_aika"/>
+                            <field name="lopetus_aika"/>
+                            <field name="kesto_tunneissa" widget="float_time"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <!-- Tarkempi kuvaus tehtävästä -->
+                        <page string="Kuvaus">
+                            <field name="kuvaus"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_todo_task" model="ir.actions.act_window">
+        <field name="name">TODO Tehtävät</field>
+        <field name="res_model">todo.task</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_todo_root" name="TODO Sovellus" sequence="10"/>
+    <menuitem id="menu_todo_tasks" name="Tehtävät" parent="menu_todo_root" action="action_todo_task"/>
+</odoo>

@@ -1,0 +1,15 @@
+.o_form_view .o_field_widget input,
+.o_form_view .o_field_widget textarea,
+.o_form_view .o_field_widget .o_input {
+    border: 1px solid #ccc !important;
+    background-color: #fcfcfc !important;
+    padding: 4px 8px !important;
+    border-radius: 4px !important;
+}
+
+.o_form_view .o_field_widget input:focus,
+.o_form_view .o_field_widget textarea:focus {
+    border-color: #7c7bad !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 0 0 0.2rem rgba(124, 123, 173, 0.25) !important;
+}
