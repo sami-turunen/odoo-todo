@@ -47,3 +47,6 @@ Odoo järjestelmä oli itselle entuudestaan jo hieman tuttu, joten kaikki ei oll
 - Odoo 19:ssä käyttöliittymän listanäkymässä käytetään uutta `<list>`-tägiä vanhan `<tree>`-tägin sijaan, mikä aiheutti alussa yhteensopivuusvirheen. Ratkaisuna käytin `list`-tägiä `tree`-tägin sijaan.
 - Syötekenttien heikko visuaalinen kontrasti: Oletuksena syötekentiltä puuttuivat selkeät reunat ja ne näkyivät pelkkänä tekstinä ennen "muokkaustilaan" siirtymistä, käyttökokemuksen parantamiseksi lisäsin CSS-tyylejä.
 - Ajan pyöristysvirhe keston laskennassa: `widget="float_time"` laskee keston sekuntitarkkuudella, jolloin esimerkiksi 51 minuutin ja 20 sekunnin pituinen tehtävä pyöristyi käyttöliittymässä muotoon 00:52 (52 minuuttia). Tämän ratkaisin nollaamalla sekunnit Python-koodissa (`.replace(second=0, microsecond=0)`)
+
+
+Käytetty aika: Noin 7-8 tuntia 3 päivän ajalla (Sisältää ohjelman, dokumentaation ja ohjeen kirjoituksen).
