@@ -17,6 +17,7 @@ cd "C:\Program Files\Odoo 19.0.20260914\server\odoo\addons"
 git clone https://github.com/sami-turunen/odoo-todo.git todo_app
 ```
 (Vaihtoehtoisesti voit ladata koodin ZIP-tiedostona osoitteesta [github.com/sami-turunen/odoo-todo](https://github.com/sami-turunen/odoo-todo) ja purkaa sen kansioon C:\Program Files\Odoo 19.0.20260914\server\odoo\addons\todo_app).
+Huom. Jos komentokehote sanoo ettei polkua löydy, on luultavasti Odoo-versio eri kuin minulla. Tarkan version löydät menemällä resurssienhallinnassa kansioon C:\Program Files. Muuta Odoo 19.0.20260914 tilalle sinulla näkyvä versionumero.
 
 ### 2. Aktivoi kehittäjätila (Developer Mode)
 - Avaa selaimessa osoite http://localhost:8069/odoo/apps.
